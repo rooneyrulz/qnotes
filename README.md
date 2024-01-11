@@ -42,7 +42,9 @@ git clone https://github.com/rooneyrulz/qnotes.git
 - Open a terminal in the `frontend` and `backend` folders separately.
 - Run the following command in both folders to install dependencies:
 
-npm install
+```bash
+ npm install
+```
 
 ## 4. Run MongoDB Container
 
@@ -94,7 +96,5 @@ Open your web browser and navigate to [http://localhost:3000](http://localhost:3
 
 - **Username:** admin
 - **Password:** 12345678
-
-Feel free to customize and expand upon these instructions based on your specific project details.
 
 Wishing you happy coding! 🚀✨👩‍💻👨‍💻
