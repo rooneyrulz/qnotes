@@ -23,8 +23,8 @@ const connectDB = require("./config/dbConn");
 
 // Configure HTTPS options
 const httpsOptions = {
-  key: fs.readFileSync("../certificates/private-key.pem"),
-  cert: fs.readFileSync("../certificates/certificate.pem"),
+  key: fs.readFileSync("./certificates/private-key.pem"),
+  cert: fs.readFileSync("./certificates/certificate.pem"),
 };
 
 const app = express();

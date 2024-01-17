@@ -6,7 +6,7 @@
 
     Here's a basic example of how to create an HTTPS server with Express:
 
-    ```
+    ```bash
     const https = require('https');
     const fs = require('fs');
     const express = require('express');
@@ -40,7 +40,7 @@
 
    Here's how you can add Helmet to your Express app:
 
-    ```
+    ```bash
     const helmet = require('helmet');
     app.use(helmet());
 
@@ -56,7 +56,7 @@
 
     use it in your Express app:
 
-    ```
+    ```bash
     const express = require('express');
     const cors = require('cors');
 
@@ -83,7 +83,7 @@
 
     You can use the express-rate-limit package to easily add rate limiting to your Express app.
 
-    ```
+    ```bash
     const express = require('express');
     const rateLimit = require("express-rate-limit");
 
@@ -113,7 +113,7 @@
 
     Here's an example of how you can use express-validator to validate user input:
 
-    ```
+    ```bash
     const express = require('express');
     const { body, validationResult } = require('express-validator');
 
@@ -127,9 +127,11 @@
         // password must be at least 5 chars long
         body('password').isLength({ min: 5 })
     ], (req, res) => {
+
     // Finds the validation errors in this request and wraps them in an object with handy functions
 
     const errors = validationResult(req);
+
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
     }
@@ -152,7 +154,7 @@
 
     Here's an example of how you can use JWT for user authentication in your Express app:
 
-    ```
+    ```bash
     const express = require('express');
     const jwt = require('jsonwebtoken');
 
@@ -198,7 +200,7 @@
 
     Next, load the environment variables in your Node.js application:
 
-    ```
+    ```bash
     require('dotenv').config();
 
     console.log(process.env.DB_HOST);
@@ -218,25 +220,33 @@
 
     1. Check for outdated packages:
 
-        ``` npm outdated ```
+        ```bash
+         npm outdated 
+        ```
 
         This command will list all outdated packages in your project.
 
     2. Update all packages:
 
-        ```npm update```
+        ```bash 
+        npm update
+        ```
 
         This command will update all packages to the latest version specified by the version range in your package.json file.
 
     3.  If you want to update a package to the latest version regardless of your version range, you can use the ```npm install``` command with ```@latest```:
 
-        ```npm install <package-name>@latest```
+        ```bash 
+        npm install <package-name>@latest
+        ```
 
         Replace <package-name> with the name of the package you want to update.
 
-    4. After updating your packages, it's a good idea to check for known vulnerabilities using ```npm audit```:
+    4. After updating your packages, it's a good idea to check for known vulnerabilities using npm audit:
 
-        ```npm audit```
+        ```bash 
+        npm audit
+        ```
 
         This command will check your project for known vulnerabilities in your dependencies and suggest how to fix them.
 
@@ -247,7 +257,7 @@
 
     Here's an example of how you can implement proper error handling in an Express app:
 
-    ```
+    ```bash
     const express = require('express');
 
     const app = express();
@@ -279,11 +289,13 @@
 
     1. First, install ESLint and the security plugin:
 
-        ```npm install --save-dev eslint eslint-plugin-security```
+        ```bash 
+        npm install --save-dev eslint eslint-plugin-security
+        ```
 
     2. Then, create a .eslintrc.json file in the root of your project and add the following configuration:
 
-        ```
+        ```bash
         {
             "extends": ["eslint:recommended", "plugin:security/recommended"],
             "plugins": ["security"],
@@ -306,7 +318,9 @@
 
           Now, you can run ESLint on your JavaScript files with the following command:
 
-            ```npx eslint yourfile.js```
+            ```bash 
+            npx eslint yourfile.js
+            ```
 
             Replace yourfile.js with the path to your JavaScript file.
 

@@ -4,7 +4,7 @@
   "description": "Kodeum project using MERN STACK",
   "main": "server.js",
   "scripts": {
-    "start:server": "node create-admin && nodemon server",
+    "start:server": "nodemon server",
     "start:client": "npm start --prefix ../frontend",
     "start": "concurrently \"npm run start:server\" \"npm run start:client\""
   },

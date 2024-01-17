@@ -1,0 +1,45 @@
+version: "3.1"
+
+networks:
+  qnotes-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - qnotes-network
+
+  admin:
+    build:
+      context: ./init.db
+      dockerfile: Dockerfile
+    container_name: admin
+    ports:
+      - "4000:4000"
+    depends_on:
+      - mongodb
+    networks:
+      - qnotes-network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - admin
+    env_file:
+      - ./backend/.env
+    networks:
+      - qnotes-network
