@@ -2,9 +2,9 @@
   "name": "init.db",
   "version": "1.0.0",
   "description": "",
-  "main": "create-admin.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node create-admin"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",

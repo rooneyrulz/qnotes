@@ -1,17 +1,9 @@
-require("dotenv").config();
-
-const express = require("express");
 const bcrypt = require("bcrypt");
 const colors = require("colors/safe");
-
-const db = require("./db");
 const User = require("./User");
 
-const app = express();
-const PORT = process.env.PORT || 4000;
-
 // Define your function to create an admin user
-async function createAdmin() {
+module.exports = async function createAdmin() {
   const username = "admin";
   const password = "12345678";
   const hashedPwd = await bcrypt.hash(password, 10); // salt rounds
@@ -37,14 +29,4 @@ async function createAdmin() {
   } else {
     console.error(colors.red("Error: Admin not created!"));
   }
-}
-
-// Connect to MongoDB
-db()
-  .then(() => {
-    createAdmin();
-  })
-  .catch((err) => console.error(err))
-  .finally(() => {
-    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-  });
+};
